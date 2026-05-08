@@ -140,7 +140,7 @@ async function initMap() {
   try {
     const AMapLoader = (await import('@amap/amap-jsapi-loader')).default
     AMapRef = await AMapLoader.load({
-      key: '008190539a005fbc8b03e5ef0958f869',
+      key: import.meta.env.VITE_AMAP_KEY,
       version: '2.0',
       plugins: ['AMap.Scale', 'AMap.ToolBar']
     })

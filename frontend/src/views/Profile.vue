@@ -331,7 +331,7 @@ onMounted(async () => {
 async function initMiniMap() {
   try {
     const AMapLoader = (await import('@amap/amap-jsapi-loader')).default
-    const AMap = await AMapLoader.load({ key: '008190539a005fbc8b03e5ef0958f869', version: '2.0' })
+    const AMap = await AMapLoader.load({ key: import.meta.env.VITE_AMAP_KEY, version: '2.0' })
     miniMap = new AMap.Map('profile-map', {
       viewMode: '2D', zoom: 4, center: [104.07, 35.44],
       mapStyle: 'amap://styles/whitesmoke'
