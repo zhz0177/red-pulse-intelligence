@@ -1,0 +1,16 @@
+import api from './index'
+
+export const getProjects = (category) => api.get('/projects.php' + (category ? `?category=${category}` : ''))
+export const getProject = (id) => api.get(`/projects.php?action=detail&id=${id}`)
+export const createProject = (data) => api.post('/projects.php?action=create', data)
+export const deleteProject = (id) => api.get(`/projects.php?action=delete&id=${id}`)
+export const getSubmissions = (projectId) => api.get(`/submissions.php?project_id=${projectId}`)
+export const submitWork = (data) => api.post('/submissions.php?action=submit', data)
+export const reviewSubmission = (data) => api.post('/submissions.php?action=review', data)
+export const submitFeedback = (data) => api.post('/feedback.php', data)
+export const getStats = () => api.get('/projects.php?action=stats')
+export const getUsers = () => api.get('/admin.php?action=users')
+export const createUser = (data) => api.post('/admin.php?action=createUser', data)
+export const updateUser = (data) => api.post('/admin.php?action=updateUser', data)
+export const deleteUser = (id) => api.get(`/admin.php?action=deleteUser&id=${id}`)
+export const getAdminProjects = () => api.get('/admin.php?action=projects')
